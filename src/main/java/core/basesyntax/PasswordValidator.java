@@ -1,7 +1,11 @@
 package core.basesyntax;
 
 public class PasswordValidator {
-    public void validate(String password, String repeatPassword) {
-        //write your code here
+    void validate (String password, String repeatPassword)
+            throws PasswordValidationException {
+        int maxLength = 10;
+        if (password.length() < maxLength || !password.equals(repeatPassword)) {
+            throw new IllegalArgumentException("Wrong passwords");
+        }
     }
 }
